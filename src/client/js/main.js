@@ -53,5 +53,36 @@ $(document).on('ready', function() {
     $('#region-bill').val(regionShip);
     $('#postal-code-bill').val(postalShip);
   });
+
+// *** This may or may not work *** //
+    var $optionSmall = $('.option-small');
+		var $optionMedium = $('.option-medium');
+		var $optionLarge = $('.option-large');
+
+
+			// $optionSmall.on('click', function(){
+			// 	// remove hidden
+			// 	$('.small').removeClass('hidden');
+			// 	$('.small').removeClass('hidden');
+			// 	$('.small').removeClass('hidden');
+
+			// 	$('.medium').toggleClass('hidden');
+			// 	$('.large').toggleClass('hidden');
+			// });
+
+			$optionSmall.on('click', function(){
+				$('.medium').toggleClass('hidden');
+				$('.large').toggleClass('hidden');
+			});
+
+			$optionMedium.on('click', function(){
+				$('.small').toggleClass('hidden');
+				$('.large').toggleClass('hidden');
+			});
+
+			$optionLarge.on('click', function(){
+				$('.small').toggleClass('hidden');
+				$('.medium').toggleClass('hidden');
+			});
 });
 // // ** End copying info from shipping to billing ** //
