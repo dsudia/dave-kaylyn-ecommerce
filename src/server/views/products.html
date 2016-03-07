@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+<!-- Beginning of products page -->
+      <!-- need to add classes in order to filter shoes -->
+      <header>
+        <h1>Products</h1>
+        <div class="col-md-3">
+          <h4>Shoe Size:</h4>
+          <h4>Shoe Color:</h4>
+        </div>
+        <div class="col-md-3">
+          <!-- options small/red -->
+          <h4><span class="option-small">Small</span></h4>
+          <h4><span class="option-red">Red</span></h4>
+        </div>
+        <div class="col-md-3">
+          <!-- options medium/blue -->
+          <h4><span class="option-medium">Medium</span></h4>
+          <h4><span class="option-blue">Blue</span></h4>
+        </div>
+        <div class="col-md-3">
+          <!-- options large/black -->
+          <h4><span class="option-large">Large</span></h4>
+          <h4><span class="option-black">Black</span></h4>
+        </div>
+      </header>
+      <section>
+        <table>
+          <tr>
+            <td class="large black">
+              <img src="../assets/Shoes.png" class="products">
+              <p>Size: Large</p>
+            </td>
+            <td class="small blue">
+              <img src="../assets/Shoe_Blue_2.png" class="products">
+              <p>Size: Small</p>
+            </td>
+            <td class="small red">
+              <img src="../assets/Shoe_Red_2.png" class="products">
+              <p>Size: Small</p>
+            </td>
+            <td class="medium black">
+              <img src="../assets/Shoes.png" class="products">
+              <p>Size: Medium</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="medium red">
+              <img src="../assets/Shoe_Red.png" class="products">
+              <p>Size: Medium</p>
+            </td>
+            <td class="large black">
+              <img src="../assets/Shoes.png" class="products">
+              <p>Size: Large</p>
+            </td>
+            <td class="small blue">
+              <img src="../assets/Shoe_Blue.png" class="products">
+              <p>Size: Small</p>
+            </td>
+            <td class="medium black">
+              <img src="../assets/Shoes.png" class="products">
+              <p>Size: Meduim</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="small blue">
+              <img src="../assets/Shoe_Blue.png" class="products">
+              <p>Size: Small</p>
+            </td>
+            <td class="large red">
+              <img src="../assets/Shoe_Red.png" class="products">
+              <p>Size: Large</p>
+            </td>
+            <td class="large black">
+              <img src="../assets/Shoes.png" class="products">
+              <p>Size: Large</p>
+            </td>
+            <td class="small red">
+              <img src="../assets/Shoe_Red_2.png" class="products">
+              <p>Size: Small</p>
+            </td>
+          </tr>
+        </table>
+      </section>
+      <!-- End of products page -->
+    </div>
+
+{% endblock %}
