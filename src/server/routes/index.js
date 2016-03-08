@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var pg = require('pg');
 var knex = require('knex');
+var userAuth = require('./userAuth');
 
 router.get('/', function(req, res, next) {
   res.render('index');
@@ -17,6 +18,10 @@ router.get('/products', function(req, res, next) {
 
 router.get('/login', function(req, res, next) {
   res.render('login', { title: 'Express' });
+});
+
+router.post('/login', function(req, res, next) {
+  userAuth(req, res, next);
 });
 
 router.get('/signup', function(req, res, next) {

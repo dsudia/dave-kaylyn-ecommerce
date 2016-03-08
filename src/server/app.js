@@ -31,9 +31,10 @@ app.set('views', path.join(__dirname, 'views'));
 
 // *** config middleware *** //
 app.use(logger('dev'));
+app.use(cookieParser(process.env.SECRET));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser(process.env.SECRET));
+
 app.use(express.static(path.join(__dirname, '../client')));
 app.use(cookieSession({
   keys: [process.env.KEY1, process.env.KEY2, process.env.KEY3]
