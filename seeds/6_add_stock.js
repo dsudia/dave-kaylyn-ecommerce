@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
     knex('stock').del(),
 
     // Inserts seed entries
-    knex('stock').insert({product_id: knex.select(id).from('products').where('name', 'Petrol Shoe'), size_id: knex.select(id).from('sizes').where('size', 8)}),
-    knex('stock').insert({product_id: knex.select(id).from('products').where('name', 'Petrol Shoe'), size_id: knex.select(id).from('sizes').where('size', 6)})
+    knex('stock').insert({product_id: knex.select('id').from('products').where('name', 'Petrol Shoe'), size_id: knex.select('id').from('sizes').where('size', 8)}),
+    knex('stock').insert({product_id: knex.select('id').from('products').where('name', 'Petrol Shoe'), size_id: knex.select('id').from('sizes').where('size', 6)})
   );
 };

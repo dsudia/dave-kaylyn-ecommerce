@@ -7,7 +7,6 @@ exports.up = function(knex, Promise) {
     table.string('image_file');
     table.decimal('price', 5, 2).notNullable();
     table.string('gender');
-    table.decimal('size', 3, 1).notNullable();
   });
 };
 
