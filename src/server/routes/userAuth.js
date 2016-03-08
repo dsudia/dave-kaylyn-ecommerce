@@ -6,7 +6,8 @@ module.exports = function userAuth (req, res, next) {
   knex('users').select('*').where('username', username)
     .then(function(user) {
       if (user.password === password) {
-        res.cookie('id', user.id, {httpOnly: true, secure: true, signed: true});
+        res.cookie('id', user.id, {httpOnly: true, secure: true, signed: true})
+        .redirect('/');
       }
     });
 };
