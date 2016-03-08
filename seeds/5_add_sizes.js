@@ -2,11 +2,21 @@
 exports.seed = function(knex, Promise) {
   return Promise.join(
     // Deletes ALL existing entries
-    knex('table_name').del(), 
+    knex('sizes').del(),
 
     // Inserts seed entries
-    knex('table_name').insert({id: 1, colName: 'rowValue'}),
-    knex('table_name').insert({id: 2, colName: 'rowValue2'}),
-    knex('table_name').insert({id: 3, colName: 'rowValue3'})
+    knex('sizes').insert({size: 5}),
+    knex('sizes').insert({size: 5.5}),
+    knex('sizes').insert({size: 6}),
+    knex('sizes').insert({size: 6.5}),
+    knex('sizes').insert({size: 7}),
+    knex('sizes').insert({size: 7.5}),
+    knex('sizes').insert({size: 8}),
+    knex('sizes').insert({size: 8.5}),
+    knex('sizes').insert({size: 9}),
+    knex('sizes').insert({size: 9.5}),
+    knex('sizes').insert({size: 10}),
+    knex('sizes').insert({size: 10.5}),
+    knex('sizes').insert({size: 11})
   );
 };

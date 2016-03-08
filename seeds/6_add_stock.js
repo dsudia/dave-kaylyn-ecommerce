@@ -2,11 +2,10 @@
 exports.seed = function(knex, Promise) {
   return Promise.join(
     // Deletes ALL existing entries
-    knex('table_name').del(), 
+    knex('stock').del(),
 
     // Inserts seed entries
-    knex('table_name').insert({id: 1, colName: 'rowValue'}),
-    knex('table_name').insert({id: 2, colName: 'rowValue2'}),
-    knex('table_name').insert({id: 3, colName: 'rowValue3'})
+    knex('stock').insert({product_id: knex.select(id).from('products').where('name', 'Petrol Shoe'), size_id: knex.select(id).from('sizes').where('size', 8)}),
+    knex('stock').insert({product_id: knex.select(id).from('products').where('name', 'Petrol Shoe'), size_id: knex.select(id).from('sizes').where('size', 6)})
   );
 };
