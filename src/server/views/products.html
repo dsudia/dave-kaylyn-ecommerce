@@ -29,62 +29,14 @@
         </div>
       </header>
       <section>
-        <table>
-          <tr>
-            <td class="large black">
-              <img src="../../images/Shoes.png" class="products">
-              <p>Size: Large</p>
-            </td>
-            <td class="small blue">
-              <img src="../../images/Shoe_Blue_2.png" class="products">
-              <p>Size: Small</p>
-            </td>
-            <td class="small red">
-              <img src="../../images/Shoe_Red_2.png" class="products">
-              <p>Size: Small</p>
-            </td>
-            <td class="medium black">
-              <img src="../../images/Shoes.png" class="products">
-              <p>Size: Medium</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="medium red">
-              <img src="../../images/Shoe_Red.png" class="products">
-              <p>Size: Medium</p>
-            </td>
-            <td class="large black">
-              <img src="../../images/Shoes.png" class="products">
-              <p>Size: Large</p>
-            </td>
-            <td class="small blue">
-              <img src="../../images/Shoe_Blue.png" class="products">
-              <p>Size: Small</p>
-            </td>
-            <td class="medium black">
-              <img src="../../images/Shoes.png" class="products">
-              <p>Size: Meduim</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="small blue">
-              <img src="../../images/Shoe_Blue.png" class="products">
-              <p>Size: Small</p>
-            </td>
-            <td class="large red">
-              <img src="../../images/Shoe_Red.png" class="products">
-              <p>Size: Large</p>
-            </td>
-            <td class="large black">
-              <img src="../../images/Shoes.png" class="products">
-              <p>Size: Large</p>
-            </td>
-            <td class="small red">
-              <img src="../../images/Shoe_Red_2.png" class="products">
-              <p>Size: Small</p>
-            </td>
-          </tr>
-        </table>
+        {% for shoe in shoes %}
+        <div class="col-xs-3">
+            <p>{{ shoe.name }}</p>
+            <img src= '../../{{ shoe.image_file }}' class="products">
+            <p>Price: {{ shoe.price }}</p>
+            <p>Color: {{ shoe.color }}, Gender: {{ shoe.gender }}</p>
+        </div>
+      {% endfor %}
       </section>
       <!-- End of products page -->
     </div>
