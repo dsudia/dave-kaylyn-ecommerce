@@ -48,23 +48,24 @@
       </div>
 
       <!-- shipping form -->
-      <form class="form-horizontal shipping">
+      <form formaction='/charge' method='post' class="form-horizontal shipping">
           <fieldset>
               <legend>Shipping</legend>
-              <!-- first name input-->
+              <!-- email input -->
               <div class="container-fluid">
               <div class="control-group">
-                  <label for="firstname" class="control-label col-sm-4">First Name</label>
+                  <label for="email" class="control-label col-sm-4">Email</label>
                   <div class="col-sm-8">
-                      <input id="first-name-ship" name="firstname" type="text" autocomplete="first-name" placeholder="first name" class="form-control">
+                      <input id="first-name-ship" name="stripeEmail" type="email"  placeholder="email@place.com" class="form-control">
                       <p class="help-block"></p>
                   </div>
               </div>
-              <!-- last name input-->
+              <!-- first name input-->
+              <div class="container-fluid">
               <div class="control-group">
-                  <label for="lastname" class="control-label col-sm-4">Last Name</label>
+                  <label for="firstname" class="control-label col-sm-4">Full Name</label>
                   <div class="col-sm-8">
-                      <input id="last-name-ship" name="lastname" type="text" autocomplete="last-name" placeholder="last name" class="form-control">
+                      <input id="first-name-ship" name="stripeBillingName" type="text" placeholder="Jane Doe" class="form-control">
                       <p class="help-block"></p>
                   </div>
               </div>
@@ -72,7 +73,7 @@
               <div class="control-group">
                   <label class="control-label col-sm-4">Address Line 1</label>
                   <div class="col-sm-8">
-                      <input id="address-line1-ship" name="address1" type="text" autocomplete="address-line1" placeholder="address line 1" class="form-control">
+                      <input id="address-line1-ship" name="stripeBillingAddressLine1" type="text" autocomplete="address-line1" placeholder="address line 1" class="form-control">
                       <p class="help-block"></p>
                   </div>
               </div>
@@ -80,7 +81,7 @@
               <div class="control-group">
                   <label class="control-label col-sm-4">Address Line 2</label>
                   <div class="col-sm-8">
-                      <input id="address-line2-ship" name="address2" type="text" autocomplete="address-line2" placeholder="address line 2" class="form-control">
+                      <input id="address-line2-ship" name="stripeBillingAddressLine2" type="text" autocomplete="address-line2" placeholder="address line 2" class="form-control">
                       <p class="help-block"></p>
                   </div>
               </div>
@@ -88,7 +89,7 @@
               <div class="control-group">
                   <label class="control-label col-sm-4">City / Town</label>
                   <div class="col-sm-8">
-                      <input id="city-ship" name="city" type="text" autocomplete="address-level2" placeholder="city" class="form-control">
+                      <input id="city-ship" name="stripeBillingAddressCity" type="text" autocomplete="address-level2" placeholder="city" class="form-control">
                       <p class="help-block"></p>
                   </div>
               </div>
@@ -96,7 +97,7 @@
               <div class="control-group">
                   <label class="control-label col-sm-4">State</label>
                   <div class="col-sm-8">
-                      <input id="region-ship" name="state" type="text" autocomplete="address-level1" placeholder="state / province / region" class="form-control">
+                      <input id="region-ship" name="stripeBillingAddressState" type="text" autocomplete="address-level1" placeholder="state / province / region" class="form-control">
                       <p class="help-block"></p>
                   </div>
               </div>
@@ -104,7 +105,7 @@
               <div class="control-group">
                   <label class="control-label col-sm-4">Zip / Postal Code</label>
                   <div class="col-sm-8">
-                      <input id="postal-code-ship" name="zip" type="text" autocomplete="postal-code" placeholder="zip or postal code" class="form-control">
+                      <input id="postal-code-ship" name="stripeBillingAddressZip" type="text" autocomplete="postal-code" placeholder="zip or postal code" class="form-control">
                       <p class="help-block"></p>
                   </div>
               </div>
@@ -120,27 +121,17 @@
               </div>
 
           </fieldset>
-      </form>
 
       <!-- billing form -->
-      <form class="form-horizontal billing">
           <fieldset>
               <!-- Address form -->
               <legend>Billing</legend>
               <!-- first name input-->
               <div class="container-fluid">
               <div class="control-group">
-                  <label for="firstname" class="control-label col-sm-4">First Name</label>
+                  <label for="firstname" class="control-label col-sm-4">Full Name</label>
                   <div class="col-sm-8">
-                      <input id="first-name-bill" name="firstname" type="text" autocomplete="first-name" placeholder="first name" class="form-control">
-                      <p class="help-block"></p>
-                  </div>
-              </div>
-              <!-- last name input-->
-              <div class="control-group">
-                  <label for="lastname" class="control-label col-sm-4">Last Name</label>
-                  <div class="col-sm-8">
-                      <input id="last-name-bill" name="lastname" type="text" autocomplete="last-name" placeholder="last name" class="form-control">
+                      <input id="first-name-bill" name="stripeShippingName" type="text" autocomplete="first-name" placeholder="first name" class="form-control">
                       <p class="help-block"></p>
                   </div>
               </div>
@@ -148,7 +139,7 @@
               <div class="control-group">
                   <label class="control-label col-sm-4">Address Line 1</label>
                   <div class="col-sm-8">
-                      <input id="address-line1-bill" name="address1" type="text" autocomplete="address-line1" placeholder="address line 1" class="form-control">
+                      <input id="address-line1-bill" name="stripeShippingAddressLine1" type="text" autocomplete="address-line1" placeholder="address line 1" class="form-control">
                       <p class="help-block"></p>
                   </div>
               </div>
@@ -156,7 +147,7 @@
               <div class="control-group">
                   <label class="control-label col-sm-4">Address Line 2</label>
                   <div class="col-sm-8">
-                      <input id="address-line2-bill" name="address2" type="text" autocomplete="address-line2" placeholder="address line 2" class="form-control">
+                      <input id="address-line2-bill" name="stripeShippingAddressLine2" type="text" autocomplete="address-line2" placeholder="address line 2" class="form-control">
                       <p class="help-block"></p>
                   </div>
               </div>
@@ -164,7 +155,7 @@
               <div class="control-group">
                   <label class="control-label col-sm-4">City / Town</label>
                   <div class="col-sm-8">
-                      <input id="city-bill" name="city" type="text" autocomplete="address-level2" placeholder="city" class="form-control">
+                      <input id="city-bill" name="stripeShippingCity" type="text" autocomplete="address-level2" placeholder="city" class="form-control">
                       <p class="help-block"></p>
                   </div>
               </div>
@@ -172,7 +163,7 @@
               <div class="control-group">
                   <label class="control-label col-sm-4">State</label>
                   <div class="col-sm-8">
-                      <input id="region-bill" name="state" type="text" autocomplete="address-level1" placeholder="state / province / region" class="form-control">
+                      <input id="region-bill" name="stripeShippingState" type="text" autocomplete="address-level1" placeholder="state / province / region" class="form-control">
                       <p class="help-block"></p>
                   </div>
               </div>
@@ -180,14 +171,13 @@
               <div class="control-group">
                   <label class="control-label col-sm-4">Zip / Postal Code</label>
                   <div class="col-sm-8">
-                      <input id="postal-code-bill" name="zip" type="text" autocomplete="postal-code" placeholder="zip or postal code" class="form-control">
+                      <input id="postal-code-bill" name="stripeShippingZip" type="text" autocomplete="postal-code" placeholder="zip or postal code" class="form-control">
                       <p class="help-block"></p>
                   </div>
               </div>
 
 
           </fieldset>
-      </form>
       </div>
 
       <!-- Credit Card Div -->
@@ -197,7 +187,6 @@
           </div>
           <div class="col-md-4 form-group">
             <h3>Purchase using your credit card</h3>
-            <form action="" method="POST" id="payment-form">
               <span class="payment-errors"></span>
 
               <div class="form-row">
@@ -223,11 +212,24 @@
                 <input type="text" size="4" data-stripe="exp-year"/>
               </div>
 
-              <button type="submit">Submit Payment</button>
+              <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+                data-image="/img/documentation/checkout/marketplace.png"
+                data-name="Shoestore.com"
+                data-description="Trainers and Oxfords"
+                data-amount="17999"
+                data-locale="auto"
+                data-billing-address='true'
+                data-shipping-address='true'
+                data-zip-code='true'
+                >
+              </script>
             </form>
           </div>
         </div>
       </div>
       <!-- End Credit Card Div -->
     </div>
+
 {% endblock %}

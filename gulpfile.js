@@ -53,7 +53,7 @@ var nodemonDistConfig = {
  */
 
 gulp.task('babel', function () {
-	return gulp.src('src/client/js/build.js')
+	return gulp.src('./src/client/js/build.js')
 		.pipe(babel({
 			presets: ['es2015']
 		}))
